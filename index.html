@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding: 0 !important;
+        margin: 0 !important;
+        color: white;
+      }
+
+      #panel-1 {
+        /*min-height: 100vh;*/
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Robot', sans-serif;
+      }
+      p, div {
+        font-family: 'Robot', sans-serif;
+      }
+
+      pre {
+        color: white;
+        background: #3b4c49;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .sample-container {
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        color: #3b4c49;
+        margin-bottom: 20px;
+      }
+
+      .samples {
+        width: 100%;
+        height: 200px;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
+    <script src="./dist/vue-breathing-colors.js"></script>
+  </head>
+  <body>
+    <div id="app" v-breathing-colors.random="bg">
+      <div class="container">
+        <div class="row justify-content-md-center" id="panel-1">
+          <div class="col-xs-12 col-md-8">
+            <h1 align="center">Vue Breathing Colors</h1>
+            <p style="text-align: center;">
+              Vue Breathing Colors is a vue directive used to change background color of any component in a "breathing like" manner.
+            </p>
+            <h2>Installation</h2>
+            <h6>NPM</h6>
+            <code>npm install vue-breathing-colors --save</code>
+            <br><br>
+            <h6>Yarn</h6>
+            <code>yarn add vue-breathing-colors</code>
+            <br><br>
+            <h6>CDN</h6>
+            <code>https://unpkg.com/vue-breathing-colors@0.0.5/dist/vue-breathing-colors.js</code>
+            <br><br>
+            <h2>Usage</h2>
+<pre>
+import Vue from 'vue';
+import BreathingColors from 'vue-breathing-colors';
+
+Vue.use(BreathingColors);
+</pre>
+
+          <pre v-text="htmlGuide"></pre>
+          <h2>Samples</h2>
+            <div class="sample-container">
+              <strong>Auto</strong><br>
+              <code>v-breathing-colors="data"</code>
+              <p>The colors will change based on array index of the color like, <code>0</code> then <code>1</code> then <code>2</code> then <code>0</code> again and so on.</p>
+              <div class="samples" v-breathing-colors="sample"></div>
+              <br>
+              <button class="btn" v-breathing-colors="sample">Button</button>
+            </div>
+            <div class="sample-container">
+              <strong>Auto + Random</strong><br>
+              <code>v-breathing-colors.random="data"</code>
+              <p>The colors randomly change based on colors inside the array by adding the modifier <code>random</code>.</p>
+              <div class="samples" v-breathing-colors.random="sample"></div>
+            </div>
+            <div class="sample-container">
+              <strong>Hover</strong><br>
+              <code>v-breathing-colors.hover="data"</code>
+              <p>The colors will change on mouse hover event. The colors will change based on array index of the color like, <code>0</code> then <code>1</code> then <code>2</code> then <code>0</code> again and so on.</p>
+              <div class="samples" v-breathing-colors.hover="sample"></div>
+            </div>
+            <div class="sample-container">
+              <strong>Hover + Random</strong><br>
+              <code>v-breathing-colors.hover.random="data"</code>
+              <p>The colors will change on mouse hover event. TThe colors randomly change based on colors inside the array by adding the modifier <code>random</code>.</p>
+              <div class="samples" v-breathing-colors.hover.random="sample"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      Vue.use(BreathingColors.default)
+      var vm = new Vue({
+        el: '#app',
+        data() {
+          return {
+            bg: {
+              colors: [
+                '#ff5151', '#ff6d51', '#ffaa51',
+                '#ffd051', '#caff51', '#6eff51',
+                '#51ff70', '#51ff96', '#51ffca',
+                '#51ffff', '#51c7ff', '#51a2ff',
+                '#5176ff', '#5651ff', '#7f51ff',
+                '#a251ff', '#bc51ff', '#df51ff',
+                '#ff51fc', '#ff51e4', '#ff51c5',
+                '#ff519c', '#ff5185', '#ff5170',
+                '#ff5159'
+              ],
+              interval: 3000,
+              transition: {
+                duration: 1000,
+                timing: 'linear'
+              }
+            },
+            sample: {
+              colors: ['#ffd051', '#ff51e4', '#ff5170'],
+              interval: 3000,
+              transition: {
+                duration: 1000,
+                timing: 'linear'
+              }
+            },
+            sample2: {
+              colors: ['#ffd051', '#ff51e4', '#ff5170'],
+              interval: 3000,
+              transition: {
+                duration: 500,
+                timing: 'linear'
+              }
+            },
+            htmlGuide: `<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"><\/script>
+  <script src="https://unpkg.com/vue-breathing-colors@0.0.5/dist/vue-breathing-colors.js"><\/script>
+</head>
+
+<body>
+  <script>
+    Vue.use(BreathingColors.default)
+    var vm = new Vue({
+      el: '#app'
+    })
+  <\/script>
+</body>`
+          }
+        }
+      });
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  </body>
+</html>
+
