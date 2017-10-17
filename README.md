@@ -1,2 +1,4 @@
 # vue-breathing-colors
-Vue directive for breathing colors transition.
+**Vue Breathing Colors** is a vue directive used to change background color of any component in a "breathing like" manner.
+
+[Demo](http://jofftiquez.github.io/vue-breathing-colors)
