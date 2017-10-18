@@ -132,11 +132,6 @@ var validate = function validate(colors, interval, transition) {
     console.warn('Breathing Colors Warn: Transition duration expects a number got - ' + _typeof(transition.duration) + '.');
     return;
   }
-
-  if (!transition.timing) {
-    console.warn('Breathing Colors Warn: Transition timing is ' + transition.timing + '. Transition object required.');
-    return;
-  }
 };
 
 exports.default = function (Vue) {

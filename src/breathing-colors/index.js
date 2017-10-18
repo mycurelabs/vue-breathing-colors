@@ -28,11 +28,6 @@ const validate = (colors, interval, transition) => {
     console.warn(`Breathing Colors Warn: Transition duration expects a number got - ${typeof transition.duration}.`);
     return; 
   }
-  
-  if(!transition.timing) {
-    console.warn(`Breathing Colors Warn: Transition timing is ${transition.timing}. Transition object required.`);
-    return; 
-  }
 }
 
 export default (Vue) => {
