@@ -55,7 +55,7 @@ export default (Vue) => {
 
       var count = colors.length;      
       colors = new Array(colors)[0].reverse();
-      transition = `background-color ${ transition.duration || 1000 }ms ${ transition.timing } ${ transition.delay ? transition.delay+'ms' : '' }`;
+      transition = `background-color ${ transition.duration || 1000 }ms linear ${ transition.delay ? transition.delay+'ms' : '' }`;
 
       el.style.backgroundColor = colors[colors.length - 1];
       el.style['-webkit-transition'] = transition;

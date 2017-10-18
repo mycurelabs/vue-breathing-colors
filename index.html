@@ -16,9 +16,18 @@
       }
 
       #panel-1 {
-        /*min-height: 100vh;*/
+        min-height: 100vh;
         padding-top: 50px;
         padding-bottom: 50px;
+      }
+
+      a{
+        color: white;
+      }
+
+      a:hover {
+        text-decoration: none;
+        color: white;
       }
 
       h1, h2, h3, h4, h5, h6 {
@@ -70,7 +79,9 @@
             <h6>CDN</h6>
             <code>https://unpkg.com/vue-breathing-colors@0.0.6/dist/vue-breathing-colors.js</code>
             <br><br>
-            <h2>Usage</h2>
+            <h2>Documentation</h2>
+            <a href="">Read here.</a>
+            <!-- <h2>Usage</h2>
 <pre>
 import Vue from 'vue';
 import BreathingColors from 'vue-breathing-colors';
@@ -106,7 +117,7 @@ Vue.use(BreathingColors);
               <p>The colors will change on mouse hover event. TThe colors randomly change based on colors inside the array by adding the modifier <code>random</code>.</p>
               <div class="samples" v-breathing-colors.hover.random="sample"></div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -130,24 +141,21 @@ Vue.use(BreathingColors);
               ],
               interval: 3000,
               transition: {
-                duration: 1000,
-                timing: 'linear'
+                duration: 1000
               }
             },
             sample: {
               colors: ['#ffd051', '#ff51e4', '#ff5170'],
               interval: 3000,
               transition: {
-                duration: 1000,
-                timing: 'linear'
+                duration: 1000
               }
             },
             sample2: {
               colors: ['#ffd051', '#ff51e4', '#ff5170'],
               interval: 3000,
               transition: {
-                duration: 500,
-                timing: 'linear'
+                duration: 500
               }
             },
             htmlGuide: `<head>
