@@ -1,4 +1,4 @@
-# vue-breathing-colors
+# Vue Breathing Colorsvue-breathing-colors
 **Vue Breathing Colors** is a vue directive used to change background color of any component in a "breathing like" manner.
 
 [Demo](https://mycurelabs.github.io/vue-breathing-colors/)
