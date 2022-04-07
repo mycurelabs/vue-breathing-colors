@@ -102,4 +102,4 @@ There 2 modifiers for this version, the `hover` and `random`.
 
 More modifiers will be added for future versions. 
 
-Made with :heart: by Jofferson Ramirez Tiquez
+Made with :heart: by [Joff Tiquez](https://twitter.com/jrtiquez)
